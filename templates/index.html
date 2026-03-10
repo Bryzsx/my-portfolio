@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }} — {{ profile.tagline }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-pill">
+            <a href="#" class="nav-brand">BC</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+            </div>
+            <a href="#contact" class="nav-cta">Hire Me</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+        <div class="hero-grid-bg"></div>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Available for Work
+                    </div>
+                    <h1 class="hero-name">{{ profile.name }}</h1>
+                    <p class="hero-sub">{{ profile.bio }}</p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">View My Projects &rarr;</a>
+                        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-photo">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="{{ profile.name }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What I Bring</span>
+                <h2 class="section-heading">Skills & Expertise</h2>
+            </div>
+
+            <div class="skills-mosaic">
+                {% for category, items in technical_skills.items() %}
+                <div class="skill-card anim" data-delay="{{ loop.index0 }}">
+                    <div class="skill-card-icon">
+                        {% if 'Web' in category %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        {% elif 'Cyber' in category %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        {% elif 'Linux' in category %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        {% elif 'Server' in category %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        {% elif 'SEO' in category or 'Database' in category %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        {% else %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                        {% endif %}
+                    </div>
+                    <h3 class="skill-card-title">{{ category }}</h3>
+                    <div class="skill-pills">
+                        {% for item in items %}
+                        <span class="pill">{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="soft-skills-strip anim">
+                <h3 class="strip-title">Soft Skills</h3>
+                <div class="strip-items">
+                    {% for skill in soft_skills %}
+                    <span class="strip-chip">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Where I've Been</span>
+                <h2 class="section-heading">Professional Experience</h2>
+            </div>
+            <div class="exp-timeline">
+                {% for exp in experience %}
+                <div class="exp-card anim">
+                    <div class="exp-date">{{ exp.location }}</div>
+                    <div class="exp-body">
+                        <h3 class="exp-title">{{ exp.title }}</h3>
+                        <p class="exp-desc">{{ exp.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="achievements-row">
+                <h3 class="sub-heading">Key Achievements</h3>
+                <div class="ach-cards">
+                    {% for ach in achievements %}
+                    <div class="ach-card anim">
+                        <span class="ach-date">{{ ach.date }}</span>
+                        <h4 class="ach-title">{{ ach.title }}</h4>
+                        <p class="ach-desc">{{ ach.description }}</p>
+                        {% if ach.images %}
+                        <div class="ach-gallery">
+                            {% for img in ach.images %}
+                            <a href="{{ url_for('static', filename='images/' + img) }}" class="ach-thumb" target="_blank">
+                                <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ ach.title }}">
+                            </a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section certs-section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Credentials</span>
+                <h2 class="section-heading">Certifications</h2>
+            </div>
+            <div class="certs-grid">
+                {% for cert in certifications %}
+                <div class="cert-card anim">
+                    <a href="{{ url_for('static', filename='images/' + cert.image) }}" target="_blank" class="cert-img-link">
+                        <img src="{{ url_for('static', filename='images/' + cert.image) }}" alt="{{ cert.title }}">
+                    </a>
+                    <div class="cert-details">
+                        <span class="cert-issuer">{{ cert.issuer }}</span>
+                        <h3 class="cert-title">{{ cert.title }}</h3>
+                        <p class="cert-meta">Instructor: {{ cert.instructor }}</p>
+                        <div class="cert-footer">
+                            <span class="cert-date">{{ cert.date }}</span>
+                            <span class="cert-hours">{{ cert.hours }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow light">What I've Built</span>
+                <h2 class="section-heading light">Featured Projects.<br><span class="text-muted-light">Built for impact.</span></h2>
+            </div>
+            <div class="projects-split">
+                <div class="projects-list">
+                    {% for project in projects %}
+                    <div class="proj-item anim">
+                        <span class="proj-numeral">{{ project.numeral }}</span>
+                        <div class="proj-info">
+                            <h3 class="proj-title">{{ project.title }}</h3>
+                            <p class="proj-desc">{{ project.description }}</p>
+                            <span class="proj-tech">{{ project.tech }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="projects-code-sticky">
+                    <div class="hero-card">
+                        <div class="card-terminal">
+                            <div class="terminal-dots"><span></span><span></span><span></span></div>
+                            <span class="terminal-title">developer.py</span>
+                        </div>
+                        <pre class="card-code"><code>{{ code_snippet }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section education-section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">My Foundation</span>
+                <h2 class="section-heading">Education</h2>
+            </div>
+            <div class="edu-cards">
+                {% for edu in education %}
+                <div class="edu-card anim">
+                    <div class="edu-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+                    </div>
+                    <div class="edu-info">
+                        <span class="edu-years">{{ edu.years }}</span>
+                        <h3 class="edu-degree">{{ edu.degree }}</h3>
+                        <p class="edu-school">{{ edu.school }}</p>
+                        <p class="edu-loc">{{ edu.location }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-dark" id="contact">
+        <div class="container">
+            <div class="contact-dark-layout">
+                <div class="contact-dark-content">
+                    <span class="section-eyebrow light">&mdash; CONTACT</span>
+                    <h2 class="contact-dark-heading">Let's build<br>something great.</h2>
+                    <p class="contact-dark-sub">Looking for a dedicated IT professional to join your team?</p>
+
+                    <div class="contact-dark-info">
+                        <div class="contact-dark-item">
+                            <span class="contact-dark-label">EMAIL</span>
+                            <a href="mailto:bryce.corvera21@gmail.com" class="contact-dark-value">bryce.corvera21@gmail.com</a>
+                        </div>
+                        <div class="contact-dark-item">
+                            <span class="contact-dark-label">PHONE</span>
+                            <a href="tel:09392665553" class="contact-dark-value">0939-266-5553</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-dark-profiles">
+                        <span class="contact-dark-label">HIRE ME ON</span>
+                        <div class="profile-links">
+                            <a href="https://www.onlinejobs.ph/jobseekers/info/3637372" target="_blank" class="profile-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                OnlineJobs.ph
+                            </a>
+                            <a href="https://virtualcoworker.zohorecruit.com/candidateportal/profile" target="_blank" class="profile-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                Virtual Coworker
+                            </a>
+                            <a href="https://www.linkedin.com/in/bryce-corvera-520863321/" target="_blank" class="profile-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-dark-actions">
+                        <a href="https://mail.google.com/mail/?view=cm&to=bryce.corvera21@gmail.com&su=Job+Inquiry+-+Bryce+Corvera" class="btn btn-white" target="_blank" rel="noopener">Get in touch &rarr;</a>
+                        <a href="{{ url_for('static', filename='images/resume.png') }}" download="Bryce_Corvera_Resume.png" class="btn btn-outline-light">Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="contact-dark-visual">
+                    <div class="contact-circles">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="container footer-inner">
+            <span class="footer-copy">&copy; 2026 Bryce A. Corvera. All rights reserved.</span>
+            <button class="footer-top-dark" id="backToTop">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </button>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
