@@ -49,6 +49,12 @@ def index():
             "title": "Face Recognition Biometric System",
             "description": "Identity verification and secure access system deployed at DOTr Region 13.",
             "tech": "(Python, OpenCV, Ubuntu, Tailscale)",
+            "images": [
+                "bio-login.png",
+                "bio-dashboard.png",
+                "bio-scanning.png",
+                "bio-recognized.png",
+            ],
         },
         {
             "numeral": "II",
