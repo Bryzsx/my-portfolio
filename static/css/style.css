@@ -691,6 +691,10 @@ button { font-family: var(--font); }
     flex-wrap: wrap;
 }
 
+.proj-thumb-wrap {
+    position: relative;
+}
+
 .proj-thumb {
     width: 72px;
     height: 48px;
@@ -704,7 +708,6 @@ button { font-family: var(--font); }
 
 .proj-thumb:hover {
     opacity: 1;
-    transform: scale(1.08);
     border-color: rgba(255,255,255,0.3);
 }
 
@@ -712,6 +715,32 @@ button { font-family: var(--font); }
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.proj-preview {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    width: 360px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+    z-index: 50;
+}
+
+.proj-thumb-wrap:hover .proj-preview {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.proj-preview img {
+    width: 100%;
+    display: block;
 }
 
 .projects-code-sticky {
