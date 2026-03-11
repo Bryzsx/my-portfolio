@@ -135,9 +135,14 @@
                         {% if ach.images %}
                         <div class="ach-gallery">
                             {% for img in ach.images %}
-                            <a href="{{ url_for('static', filename='images/' + img) }}" class="ach-thumb" target="_blank">
-                                <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ ach.title }}">
-                            </a>
+                            <div class="ach-thumb-wrap">
+                                <a href="{{ url_for('static', filename='images/' + img) }}" class="ach-thumb" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ ach.title }}">
+                                </a>
+                                <div class="ach-preview">
+                                    <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ ach.title }}">
+                                </div>
+                            </div>
                             {% endfor %}
                         </div>
                         {% endif %}
