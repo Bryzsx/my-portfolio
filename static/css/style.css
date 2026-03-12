@@ -513,6 +513,7 @@ button { font-family: var(--font); }
     display: flex;
     gap: 6px;
     margin-top: 12px;
+    flex-wrap: wrap;
 }
 
 .ach-thumb-wrap {
@@ -520,14 +521,14 @@ button { font-family: var(--font); }
 }
 
 .ach-thumb {
-    width: 64px;
-    height: 44px;
-    border-radius: 4px;
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border);
     transition: all var(--duration) var(--ease);
     display: block;
-    opacity: 0.85;
+    opacity: 0.75;
 }
 
 .ach-thumb:hover {
@@ -546,11 +547,12 @@ button { font-family: var(--font); }
     bottom: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%) scale(0.95);
-    width: 340px;
+    max-width: 280px;
+    max-height: 320px;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.15);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
@@ -565,6 +567,8 @@ button { font-family: var(--font); }
 
 .ach-preview img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
@@ -727,13 +731,13 @@ button { font-family: var(--font); }
 }
 
 .proj-thumb {
-    width: 72px;
-    height: 48px;
-    border-radius: 4px;
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
     display: block;
-    opacity: 0.7;
+    opacity: 0.65;
     transition: all var(--duration) var(--ease);
 }
 
@@ -753,11 +757,12 @@ button { font-family: var(--font); }
     bottom: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%) scale(0.95);
-    width: 360px;
+    max-width: 280px;
+    max-height: 320px;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
@@ -771,6 +776,8 @@ button { font-family: var(--font); }
 
 .proj-preview img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
