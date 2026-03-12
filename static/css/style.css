@@ -521,8 +521,8 @@ button { font-family: var(--font); }
 }
 
 .ach-thumb {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 90px;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -731,8 +731,8 @@ button { font-family: var(--font); }
 }
 
 .proj-thumb {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 90px;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
