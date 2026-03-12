@@ -124,6 +124,21 @@ def index():
                 "hack4gov-team.png",
             ],
         },
+        {
+            "date": "Feb 2025",
+            "title": "Cypeer Cybersecurity Outreach — Libertad NHS",
+            "description": (
+                "Volunteer — conducted a community outreach program at Libertad National High School "
+                "educating Grade 10 students about cybersecurity awareness and digital safety as part "
+                "of ACLC Butuan's Cypeer organization."
+            ),
+            "images": [
+                "cypeer-1.png",
+                "cypeer-2.png",
+                "cypeer-3.png",
+                "cypeer-4.png",
+            ],
+        },
     ]
 
     certifications = [
