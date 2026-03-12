@@ -67,6 +67,18 @@ def index():
         },
         {
             "numeral": "III",
+            "title": "Wonder Table",
+            "description": "An Android-based Augmented Reality learning tool for periodic elements with quiz modes and 3D AR visualization.",
+            "tech": "(Unity, C#, Vuforia, Android)",
+            "images": [
+                "wonder-home.png",
+                "wonder-quiz.png",
+                "wonder-question.png",
+                "wonder-ar.png",
+            ],
+        },
+        {
+            "numeral": "IV",
             "title": "Portfolio Website",
             "description": "Personal portfolio site hosted on PythonAnywhere.",
             "tech": "(Python (Flask), HTML/CSS, JavaScript)",
