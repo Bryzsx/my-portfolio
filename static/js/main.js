@@ -6,12 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    // Nav scroll
-    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+    let lastScroll = 0;
+    const onScroll = () => {
+        const y = window.scrollY;
+        nav.classList.toggle("scrolled", y > 12);
+        lastScroll = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // Mobile menu
     if (toggle && links) {
         toggle.addEventListener("click", () => {
             toggle.classList.toggle("open");
@@ -25,9 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // Active nav highlight
     function updateNav() {
-        const y = window.scrollY + 100;
+        const y = window.scrollY + 120;
         let current = "";
         sections.forEach(s => { if (y >= s.offsetTop) current = s.id; });
         navLinks.forEach(l =>
@@ -37,21 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateNav, { passive: true });
     updateNav();
 
-    // Scroll reveal
     const observer = new IntersectionObserver(
         entries => entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const d = entry.target.dataset.delay || 0;
-                entry.target.style.transitionDelay = d * 60 + "ms";
+                entry.target.style.transitionDelay = d * 80 + "ms";
                 entry.target.classList.add("visible");
                 observer.unobserve(entry.target);
             }
         }),
-        { threshold: 0.06, rootMargin: "0px 0px -20px 0px" }
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
     document.querySelectorAll(".anim").forEach(el => observer.observe(el));
 
-    // Code syntax coloring
     const code = document.querySelector(".card-code code");
     if (code) {
         let h = esc(code.textContent);
@@ -68,9 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
         return d.innerHTML;
     }
 
-    // Back to top
-    const top = document.getElementById("backToTop");
-    if (top) top.addEventListener("click", () =>
+    const topBtn = document.getElementById("backToTop");
+    if (topBtn) topBtn.addEventListener("click", () =>
         window.scrollTo({ top: 0, behavior: "smooth" })
     );
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", e => {
+            const target = document.querySelector(anchor.getAttribute("href"));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
 });
