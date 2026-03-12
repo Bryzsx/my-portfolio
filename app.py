@@ -135,9 +135,27 @@ def index():
 
     education = [
         {
-            "years": "2022 - 2026",
-            "degree": "BS Information Technology",
-            "school": "ACLC College of Butuan",
+            "years": "2020 - 2026",
+            "degree": "Bachelor of Science in Information Technology",
+            "school": "ACLC Butuan College",
+            "location": "Butuan City, Philippines",
+        },
+        {
+            "years": "2019 - 2020",
+            "degree": "Senior High School",
+            "school": "Agusan National High School",
+            "location": "Butuan City, Philippines",
+        },
+        {
+            "years": "2015 - 2018",
+            "degree": "Junior High School",
+            "school": "Butuan Christian Community School",
+            "location": "Butuan City, Philippines",
+        },
+        {
+            "years": "2009 - 2015",
+            "degree": "Elementary Education",
+            "school": "Butuan Christian Community School",
             "location": "Butuan City, Philippines",
         },
     ]
