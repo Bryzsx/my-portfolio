@@ -61,6 +61,9 @@ def index():
             "title": "SMART Home Automation",
             "description": "Miniature smart home model with automated lighting and gate control via voice commands.",
             "tech": "(Raspberry Pi 4, Python (Flask), Alexa Echo Dot, Servo Motor, LED Lights)",
+            "images": [
+                "smart-home.png",
+            ],
         },
         {
             "numeral": "III",
