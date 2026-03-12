@@ -108,6 +108,11 @@ def index():
             "date": "Dec 2025",
             "title": "DOTr Region 13 Internship",
             "description": "Deployed a Face Recognition Biometric System in a government IT environment.",
+            "images": [
+                "dotr-training.png",
+                "dotr-team.png",
+                "dotr-group.png",
+            ],
         },
         {
             "date": "Oct 2025",
