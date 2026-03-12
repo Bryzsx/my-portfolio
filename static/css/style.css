@@ -474,13 +474,14 @@ button { font-family: var(--font); }
     background: var(--border);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    overflow: hidden;
 }
 
 .ach-card {
     background: var(--white);
     padding: 24px;
     transition: background var(--duration) var(--ease);
+    overflow: visible;
+    position: relative;
 }
 
 .ach-card:hover { background: var(--surface-alt); }
