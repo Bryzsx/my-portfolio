@@ -91,18 +91,21 @@ def index():
             "tech": "(TypeScript, React Native, Python, REST API, Mobile UI/UX)",
             "tech_stack": ["TypeScript", "React Native", "Python", "REST API", "Mobile UI/UX"],
             "images": [
-                "pawfect1.jpg",
-                "pawfect2.jpg",
-                "pawfect3.jpg",
-                "pawfect4.jpg",
+                "Pawfect1.jpg",
+                "Pawfect2.jpg",
+                "Pawfect3.jpg",
+                "Pawfect4.jpg",
             ],
         },
         {
             "numeral": "V",
             "title": "Portfolio Website",
-            "description": "Personal portfolio site hosted on PythonAnywhere.",
+            "description": "Personal portfolio site — Flask on PythonAnywhere and NestJS on Vercel.",
             "tech": "(Python (Flask), HTML/CSS, JavaScript)",
             "tech_stack": ["Python (Flask)", "HTML/CSS", "JavaScript"],
+            "links": [
+                {"label": "Vercel (NestJS)", "url": "https://nest-js-portfolio-three.vercel.app/#about"},
+            ],
         },
     ]
 

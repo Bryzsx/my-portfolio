@@ -407,6 +407,16 @@ ul { list-style: none; }
   padding: 4px 12px; border-radius: var(--radius-xs);
   border: 1px solid rgba(246, 241, 235, 0.12);
 }
+.project-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.project-link-tag {
+  font-size: 0.8rem; font-weight: 600; color: var(--text-light);
+  background: rgba(246, 241, 235, 0.1); padding: 8px 16px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(246, 241, 235, 0.2);
+  transition: all 0.25s;
+}
+.project-link-tag:hover {
+  background: rgba(246, 241, 235, 0.18); border-color: rgba(246, 241, 235, 0.4);
+}
 .project-images, .proj-gallery { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 .project-img, .proj-thumb {
   width: 90px; height: 68px; object-fit: cover; border-radius: 8px;
