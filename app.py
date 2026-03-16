@@ -27,7 +27,7 @@ def index():
     }
 
     technical_skills = {
-        "Web & Backend Development": ["Python", "Flask", "Django", "HTML", "CSS"],
+        "Web & Backend Development": ["Python", "Flask", "Django", "NestJS", "HTML", "CSS"],
         "Cybersecurity & Forensics": ["Network Analysis", "Vulnerability Assessment", "Penetration Testing", "CTF"],
         "Linux Systems": ["Ubuntu", "Kali Linux"],
         "Server Management": ["Tailscale", "Remote Server Admin"],
@@ -49,6 +49,7 @@ def index():
             "title": "Face Recognition Biometric System",
             "description": "Identity verification and secure access system deployed at DOTr Region 13.",
             "tech": "(Python, OpenCV, Ubuntu, Tailscale)",
+            "tech_stack": ["Python", "OpenCV", "Ubuntu", "Tailscale"],
             "images": [
                 "bio-login.png",
                 "bio-dashboard.png",
@@ -61,6 +62,7 @@ def index():
             "title": "SMART Home Automation",
             "description": "Miniature smart home model with automated lighting and gate control via voice commands.",
             "tech": "(Raspberry Pi 4, Python (Flask), Alexa Echo Dot, Servo Motor, LED Lights)",
+            "tech_stack": ["Raspberry Pi 4", "Python (Flask)", "Alexa Echo Dot", "Servo Motor", "LED Lights"],
             "images": [
                 "smart-home.png",
             ],
@@ -70,6 +72,7 @@ def index():
             "title": "Wonder Table",
             "description": "An Android-based Augmented Reality learning tool for periodic elements with quiz modes and 3D AR visualization.",
             "tech": "(Unity, C#, Vuforia, Android)",
+            "tech_stack": ["Unity", "C#", "Vuforia", "Android"],
             "images": [
                 "wonder-home.png",
                 "wonder-quiz.png",
@@ -79,9 +82,27 @@ def index():
         },
         {
             "numeral": "IV",
+            "title": "PawFect — Pet Adoption App",
+            "description": (
+                "A full-stack mobile application for pet adoption that connects shelters and pet owners "
+                "with potential adopters. Features user authentication, pet listings, adoption request "
+                "management with approve/reject workflows, and a polished sage-green UI."
+            ),
+            "tech": "(TypeScript, React Native, Python, REST API, Mobile UI/UX)",
+            "tech_stack": ["TypeScript", "React Native", "Python", "REST API", "Mobile UI/UX"],
+            "images": [
+                "pawfect1.jpg",
+                "pawfect2.jpg",
+                "pawfect3.jpg",
+                "pawfect4.jpg",
+            ],
+        },
+        {
+            "numeral": "V",
             "title": "Portfolio Website",
             "description": "Personal portfolio site hosted on PythonAnywhere.",
             "tech": "(Python (Flask), HTML/CSS, JavaScript)",
+            "tech_stack": ["Python (Flask)", "HTML/CSS", "JavaScript"],
         },
     ]
 
